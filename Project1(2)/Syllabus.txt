@@ -1,0 +1,59 @@
+			
+		
+			SYLLABUS
+
+
+		A] Mathematics
+
+		1) Matrices
+		2) Calculus
+		3) Beta-Gamma Function
+		4) Multivariable Calculus
+		5) Curve Tracing
+		6) Statistics
+
+
+		B] Physics
+
+		1) Quantum Physics
+		2) Optics
+		3) Ultrasonics
+		4) Solid State Physics
+		5) Gravitation
+		6) Computer Instrumentation
+
+
+		C] Chemistry
+
+		1) General Principles of Chemical Analysis
+		2) Water Chemistry
+		3) Phase rule
+		4) Polymers
+		5) Thermal Analysis
+		6) Energy Science
+
+
+		D] English
+
+		1) Fundamentals of Communication
+		2) Grammar
+		3) Style in technical Communication
+		4) Non-Verbal Communication
+		5) Developing Effective Listening Skills
+		6) Basics of Phonetics
+
+
+		E] Computer Science
+
+		1) Introduction to Computer
+		2) C Fundamentals
+		3) Arrays in C
+		4) Functions in C
+		5) Pointers, Structures, Union
+		6) File Handling
+
+
+		F] Environment Science
+
+		1) 
+		 

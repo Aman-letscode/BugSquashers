@@ -1,0 +1,100 @@
+Q(1).Which of the following is a Fibonacci number?
+1.42042
+2.15629
+3.28657
+4.23415
+Q(2)Which rocks is transformed into marble?
+1.Limestone
+2.Black stone
+3.Red stone
+4.Grenite
+Q(3)Who appoints the Chief Election Commissioner of India?
+1.Prime Minister
+2.Deputy Minister
+3.President
+4.Cheif Minister
+Q(4).Which is the Wealthiest nation in the world?
+1.USA
+2.Qatar
+3.Israel
+4.UAE
+Q(5).What is the time taken by the light of the Sun to reach the Earth?
+1.8 Minutes
+2.9 Minutes
+3.7 Minute 20 second
+4.8 Minute 18 second
+Q(6).Which planet in the solar system has the highest density?
+1.Earth
+2.Mercury
+3.Jupiter
+4.Saturn
+Q(7).Which is the longest river in the world?
+1.Amazon
+2.Nile
+3.Yangtze
+4.Mississippi
+Q(8).Fastest shorthand writer was...
+1.Dr.G.D.Bist
+2.J.R.D.Tata
+3.J.M.Tagore
+4.Khudada Khan
+Q(9).Epsom (England) is the place associated with...
+1.Horse racing
+2.Polo
+3.Shooting
+4.Snooker
+Q(10).Who made the first super computer for India?
+1.Madhu Sudhan
+2.Amar Gupta
+3.Dr.Vijay Bhatkar
+4.Shiva Annadurai
+Q(11). Frames from one LAN can be transmitted to another LAN via the device...
+1.Router
+2.Bridge
+3.Repeater
+4.Modem
+Q(12).Which of the following is the first calculating device?
+1.Abacus
+2.Turing Machine
+3.Calculator
+4.Pascaline
+Q(13).Who is the 'Father of Artificial Intelligence'?
+1.Herbert Simon
+2.John McCarthy
+3.Allen Newell
+4.Alan Turing
+Q(14).Name the country where there no mosquitoes are found?
+1.Japan
+2.Italy
+3.Argentina
+4.France
+Q(15).How old is Solar sytem?
+1.5 billion years
+2.50 billion years
+3.500 billion years
+4.5 million years
+Q(16).Where is RAM located?
+1.Expansion Board
+2.External Drive
+3.Mother Board
+4.None
+Q(17).Which city is known as'City of Blood' in India?
+1.Tezpur
+2.Yavatmal
+3.Jaisalmer
+4.Jodhpur
+Q(18). Which of the following device is used to connect two systems, especially if the systems use different protocols?
+1.hub
+2.bridge
+3.gateway
+4.repeater
+Q(19).What is the motif on Indian currency notes of Rs.100?
+1.Udaipur
+2.Rani ki Vaav
+3.Konark temple
+4.Gandhiji
+Q(20).Wind speed is measure by__________?
+1.Lysimeter
+2.Air vane
+3.Hydrometer
+4.Anemometer
