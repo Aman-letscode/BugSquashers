@@ -11,29 +11,30 @@
 
 using namespace std;
 
-void main1();
-void Dashboard(std::__cxx11::string id);
-void attendence(string id);
-int dash(int n, string section, string arr[]);
-void password(string pass);
-void create(void);
-void login(void);
-void NotesSec(string id);
-int syllabus(string id);
-int notes(string id);
-int videos(string id);
-int dashque(int n, string que, string arr[]);
-void quiz(string id);
-std::string takePasswdFromUser();
+//Function for different sections and task
+void main1();//home page
+void Dashboard(std::__cxx11::string id);//Dashboard
+void attendence(string id);//Attendence Section
+void create(void);//Create New Id
+void login(void);//Login Page
+void NotesSec(string id);//Study Material
+int syllabus(string id);//Syllabus Section of study material 
+int notes(string id);//Notes section of study material 
+int videos(string id);//Videos section of study material 
+void quiz(string id);//Quiz Section
 
+int dash(int n, string section, string arr[]);//to navigate through option
+int dashque(int n, string que, string arr[]);//Navigate thorugh option in a question to answer
+std::string takePasswdFromUser();//To hide and save the password 
+
+//User defined data type in enum 
 enum IN
 {
-
 	IN_BACK = 8, // 8 is ASCII for Backspace;
-	IN_RET = 13	 // 13 is ASCII for carriage return
-
+	IN_RET = 13 // 13 is ASCII for carriage return
 };
 
+//Class for searching and sorting rows from csv files
 class LoginRow
 {
 private:
@@ -77,13 +78,13 @@ std::istream &operator>>(std::istream &str, LoginRow &data)
 int main()
 {
 	main1();
-
 	return 0;
 }
 
 void main1()
 {
 	int n = 3;
+	//Options
 	string option[] = {" Create id", " Login", " Exit"};
 	system("cls");
 	cout << " Welcome to 'STUDENT STUDY MANAGER'" << endl;
@@ -106,6 +107,8 @@ void main1()
 		exit(0);
 	}
 }
+
+//To create New Id
 void create(void)
 {
 	string id, pass, num;
@@ -198,10 +201,12 @@ START:
 	}
 }
 
+//Login Page
 void login()
 {
 	int i = 0;
 	char q;
+//checkpoint
 Start:
 	system("CLS");
 	fstream file;
@@ -211,7 +216,9 @@ Start:
 	cout << "Enter your ID: ";
 	cin >> id;
 	cout << "Enter your password:\n";
+	//To type the password in hidden form directing to the function
 	pass = takePasswdFromUser();
+	//Searching for the id and and matching the password
 	while (file >> row)
 	{
 		if (row[0] == id)
@@ -222,6 +229,7 @@ Start:
 
 				Sleep(2000);
 				Dashboard(id);
+				//flagging
 				i = 1;
 				break;
 			}
@@ -231,6 +239,7 @@ Start:
 			}
 		}
 	}
+	//If Id is not in the database, it will ask u to create id or to try again
 	if (i == 0)
 	{
 		std::cout << "Sorry! No ID found!!" << endl
@@ -246,39 +255,17 @@ Start:
 		{
 			std::cout << "Press enter to try again!";
 			Sleep(2000);
+			//Go to the checkpoint named 'Start'
 			goto Start;
 		}
 	}
+	//If password doesn't match, it will redirect u to the checkpoint
 	else if (i == 2)
 	{
 		cout << endl
 			 << "Incorrect Password!" << endl<< "Please try again";
 		Sleep(2000);
 		goto Start;
-	}
-}
-
-void password(string pass)
-{
-	char a;
-	for (int j = 0;;)
-	{
-		a = getch();
-		if ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z') || (a >= '0' && a <= '9'))
-		{
-			pass[j] = a;
-			++j;
-			cout << '*';
-		}
-		else if (a == '\b')
-		{
-			cout << "\b \b";
-			--j;
-		}
-		else if (a == '\r')
-		{
-			break;
-		}
 	}
 }
 
@@ -356,10 +343,12 @@ int dash(int n, string section, string arr[])
 	}
 }
 
+//Dashboard having different section
 void Dashboard(std::__cxx11::string id)
 {
 	string Menu[] = {" Attendence", " Study Material", " Quiz", " Logout"};
 	int a = dash(4, " DASHBOARD", Menu);
+	//using switch case to go to different section
 	switch (a)
 	{
 	case 0:
@@ -389,18 +378,18 @@ void Dashboard(std::__cxx11::string id)
 }
 
 
+time_t t;//time_t data type return the variable the standard time in seconds
 
-time_t t;
+//Attendence section having option to give or see the attendence 
 void attendence(string id)
 {
 	
 	char n;
 	std::string sub[2], que, ans[2];
 Start:
-	
+	//Use to get the time one gave the attendence
 	struct tm *ptr;
 	t = time(NULL);
-	// ptr = gmtime(&t);
 	system("CLS");
 	string arr[] = {" Give Attendence", " See the Attendence Sheet", " Back to Dashboard"};
 	int a = dash(3, "*********ATTENDANCE SECTION*********", arr);
@@ -409,11 +398,14 @@ Start:
 			system("CLS");
 			ifstream files;
 			ofstream myfiles;
+			//Subject u want to give attendence
 			cout << " Enter the Subject: ";
 			cin >> sub[0];
-			files.open("test.txt", ios::in);
-			if (files.is_open())
+			files.open("test.txt", ios::in);//open file to get data 
+			
+			if (files.is_open())//is file open or not
 			{
+				//taking lines one by one from file to sub[1]
 				while (getline(files, sub[1]))
 				{
 					if (sub[1] == sub[0])
@@ -424,12 +416,13 @@ Start:
 						getline(files, ans[1]);
 						myfiles.open("attendence.csv", ios::app);
 						
+						//If answer correct, attendence will be filled
 						if (ans[1] == ans[0])
 						{
 							myfiles << endl<< id << "," << sub[0] << "," << ctime(&t);
-							cout << endl<< id << "\t" << sub[0] << "\t" << ctime(&t);
+							cout <<endl<<"Attendence Has been recorded!!"<< endl<< id << "\t" << sub[0] << "\t" << ctime(&t);
 						}
-						else{
+						else{//else no attendence will be recorded
 							cout<<"Sorry Incorrect Answer!!"<<endl;
 						}
 						myfiles.close();
@@ -439,12 +432,12 @@ Start:
 				
 			}
 
-				 cout << endl<< endl;
+			cout << endl<< endl;
 			system("pause"); // Asks user to enter key to go forward
 			goto Start;
 			
 			}
-	else if (a == 1)
+	else if (a == 1)//To see the attendence history subject-wise
 	{
 		
 			system("CLS");
@@ -452,13 +445,7 @@ Start:
 			LoginRow row;
 			cout << " Enter the Subject: ";
 			cin >> sub[0];
-			cout << endl
-				 << "\t   "
-				 << "Date"
-				 << "      "
-				 << "Time"
-				 << "\t   "
-				 << "Subject";
+			cout << endl<< "\t   "<< "Date"<< "      "<< "Time"<< "\t   "<< "Subject";
 			while (myfiles >> row)
 			{
 				if (row[0] == id)
@@ -476,6 +463,7 @@ Start:
 	}
 	else if (a == 2)
 	{
+		//Direct you to Dashboard function
 		Dashboard(id);
 	}
 
@@ -689,6 +677,7 @@ int videos(string id)
 	return 0;
 }
 
+//To attempt the quiz and show the scoreboard of user
 void quiz(string id)
 {
 	Start:
@@ -702,8 +691,8 @@ void quiz(string id)
 		int a, count = 0;
 		string cor;
 		string que, ans[4];
-		ofstream scores;
-		ifstream question, answer;
+		ofstream scores;//to store the score
+		ifstream question, answer;//get questions and options 
 		question.open("question.txt", ios::in);
 		answer.open("answer.txt", ios::in);
 		for (int i = 0; i < 20; i++)
@@ -715,24 +704,24 @@ void quiz(string id)
 			}
 			a = dashque(4, que, ans);
 			getline(answer, cor);
-			if (ans[a] == cor)
+			if (ans[a] == cor)//check if correct
 			{
 				cout << endl << " CORRECT!";
-				++count;
+				++count;//Increment the score
 				Sleep(1000);
 			}
-			else
+			else//Not then incorrect
 			{
 				cout << endl << " Incorrect!";
 				Sleep(1000);
 			}
 		}
+		//Note the time when the quiz attempted
 		struct tm *ptr;
 		time_t t;
 		t = time(NULL);
 		scores.open("score.csv", ios::app);
-		scores << endl
-			   << id << "," << count << "," << ctime(&t);
+		scores << endl<< id << "," << count << "," << ctime(&t);//Saving the score
 		scores.close();
 		cout << endl<< endl;
 	system("pause"); // Asks user to enter key to go forward
@@ -749,8 +738,7 @@ void quiz(string id)
 		{
 			if (row[0] == id)
 			{
-				cout << endl
-					 << "\t" << row[2] << "   " << row[1];
+				cout << endl<< "\t" << row[2] << "   " << row[1];//Displaying the ScoreCard
 			}
 		}
 		cout << endl<< endl;
@@ -758,7 +746,7 @@ void quiz(string id)
 	goto Start;
 	}
 	else if(b==2){
-		Dashboard(id);
+		Dashboard(id);//Back to Dashboard
 	}
 }
 
