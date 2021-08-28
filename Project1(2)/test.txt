@@ -1,11 +1,18 @@
-Science
+Mathematics
+What is 2*3+4?
+10
+Physics
 Who discovered Gravity?
 Newton
+Chemistry
+What is the common name of C6H5-OH?
+Phenol
 English
 What is synonyms of hard?
 Tough
-Maths
-What is 2*3+4?
-10
-
-
+Computer
+'\n' is ....... character.
+Newline
+EVS
+Atmospheric layer above Troposphere is..
+Stratosphere
