@@ -387,7 +387,7 @@ void attendence(string id)
 	char n;
 	std::string sub[2], que, ans[2];
 Start:
-	//Use to get the time one gave the attendence
+	//Use to get the time when one gave the attendence
 	struct tm *ptr;
 	t = time(NULL);
 	system("CLS");
@@ -422,7 +422,8 @@ Start:
 							myfiles << endl<< id << "," << sub[0] << "," << ctime(&t);
 							cout <<endl<<"Attendence Has been recorded!!"<< endl<< id << "\t" << sub[0] << "\t" << ctime(&t);
 						}
-						else{//else no attendence will be recorded
+						//else no attendence will be recorded
+						else{
 							cout<<"Sorry Incorrect Answer!!"<<endl;
 						}
 						myfiles.close();
